@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:13:47 by pramos            #+#    #+#             */
-/*   Updated: 2023/10/23 23:29:37 by pramos           ###   ########.fr       */
+/*   Updated: 2023/11/02 23:11:51 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*find_path(char **envp)
 {
+	if(!*envp)
+		error();
 	while (ft_strncmp("PATH=", *envp, 5))
 		envp++;
 	return (*envp + 5);
