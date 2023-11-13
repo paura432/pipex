@@ -6,7 +6,7 @@
 /*   By: pramos <pramos@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 18:13:47 by pramos            #+#    #+#             */
-/*   Updated: 2023/11/02 23:11:51 by pramos           ###   ########.fr       */
+/*   Updated: 2023/11/13 18:22:10 by pramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,10 @@ char	*change_paths(char *paths, char *cmd)
 	tmp_paths = ft_split(paths, ':');
 	while (*tmp_paths)
 	{
-		if (access(cmd, 0) == 0)
-			return (cmd);
 		tmp = ft_strjoin(*tmp_paths, "/");
 		path = ft_strjoin(tmp, cmd);
 		free(tmp);
-		if (access(path, 0) == 0)
+		if (access(path, F_OK & R_OK) == 0)
 			return (path);
 		free(path);
 		tmp_paths++;
