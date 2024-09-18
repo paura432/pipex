@@ -1,11 +1,11 @@
 NAME = pipex
 
-MY_SOURCES = pipex.c pipex_utils.c
+MY_SOURCES = pipex.c pipex_utils.c pipex_utils_2.c
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Ilibreria #-g3 -fsanitize=address
+CFLAGS = -Wall -Wextra -Werror -Ilibreria -g3 #-fsanitize=address
 
 all: ${NAME}
 ${NAME}: ${MY_OBJECTS}

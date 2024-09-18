@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   pipex_utils_2.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pramos <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 21:09:00 by pramos            #+#    #+#             */
-/*   Updated: 2023/01/17 21:09:04 by pramos           ###   ########.fr       */
+/*   Created: 2024/09/17 17:33:06 by marvin            #+#    #+#             */
+/*   Updated: 2024/09/17 17:33:06 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "pipex.h"
 
-char	*ft_strrchr(const char *str, int c)
+void	error(void)
 {
-	int	i;
+	perror("\033[31mError");
+	printf("\e[0m");
+	exit(EXIT_FAILURE);
+}
 
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	while (i >= 0)
-	{
-		if (str[i] == (char)c)
-			return ((char *)str + i);
-		i--;
-	}
-	return (0);
+void	close_fds(int fd1, int fd2, int *fd)
+{
+	close(fd[0]);
+	close(fd[1]);
+	close(fd1);
+	close(fd2);
 }
