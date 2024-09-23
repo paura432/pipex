@@ -13,7 +13,7 @@ ${NAME}: ${MY_OBJECTS}
 	@${CC} ${CFLAGS} ${MY_OBJECTS} ./Libft/libft.a -o ${NAME}
 
 clean:
-		@${MAKE} -C ./libft fclean
+		@${MAKE} -C ./Libft fclean
 		rm -f $(MY_OBJECTS)
 
 fclean: clean
