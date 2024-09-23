@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdio.h>
+#include <stdio.h>
 
 int	ft_isalnum(int c)
 {

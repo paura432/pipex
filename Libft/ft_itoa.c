@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include"libft.h"
+#include "libft.h"
 
 static int	ft_lenint(int n)
 {
@@ -55,6 +55,6 @@ char	*ft_itoa(int n)
 		len--;
 	}
 	if (n < 0)
-			str[len] = '-';
+		str[len] = '-';
 	return (str);
 }

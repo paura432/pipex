@@ -34,7 +34,7 @@ void	execute_cmd(char **cmd, char **envp)
 			error();
 		execve(true_path, cmd, envp);
 		free(true_path);
-	}	
+	}
 }
 
 void	child_proces(int *fd, int fd1, char **cmd1, char **envp)
